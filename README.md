@@ -11,7 +11,7 @@
 
 ## Project
 
-Our goal is to create a zen link web app that gives the user a virtual fish tank to interact with and unwind watching. 
+Our goal is to create a zen like web app that gives the user a virtual fish tank to interact with and unwind watching. 
 
 ## Tasks to complete
 
