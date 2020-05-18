@@ -3,11 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
+  <title>Zen Aquarium</title>
+  <link rel="stylesheet" href="css/reset.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-  
+  <header>
+  </header>
+  <main>
+    <canvas id="myCanvas"></canvas>
+    <div id="buttons">
+      <audio id="soundtrack" src="nocturne.mp3"></audio>
+      <button id="play" type="button" onclick="playAudio()">On</button>
+      <button id="pause" type="button" onclick="pauseAudio()">Off</button>
+    </div>
+    <div id="background-wrap"> 
+      <div class="bubble x1"></div>
+      <div class="bubble x2"></div>
+      <div class="bubble x3"></div>
+      <div class="bubble x4"></div>
+      <div class="bubble x5"></div>
+      <div class="bubble x6"></div>
+      <div class="bubble x7"></div>
+      <div class="bubble x8"></div>
+      <div class="bubble x9"></div>
+      <div class="bubble x10"></div>
+    </div>
+  </main>
+  <footer>
+  </footer>
+  <script src="js/app.js"></script>
 </body>
+
 </html>

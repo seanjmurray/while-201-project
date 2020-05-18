@@ -1,0 +1,204 @@
+body {
+	background: #00b4ff;
+	color: #333;
+	font: 100% Lato, Arial, Sans Serif;
+	height: 100hv;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#myCanvas {
+	height: 100%;
+	width: 100%;
+}
+
+#background-wrap {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
+
+#play,
+#pause {
+	background: radial-gradient(circle at 30px 30px, #5cabff, rgb(237, 232, 232));
+	border-radius: 50%;
+	color: white;
+	display: block;
+	font-weight: bold;
+	height: 80px;
+	opacity: 50%;
+	outline: none;
+	padding: 10px;
+	text-align: center;
+	width: 80px;
+	transition: 1s ease;
+}
+
+#play:hover,
+#pause:hover {
+	color: white;
+	font-size: 14px;
+	height: 100px;
+	width: 100px;
+}
+
+
+#play {
+	animation: MoveUpDown 15s linear infinite;
+	left: 1%;
+	position: absolute;
+}
+
+@keyframes MoveUpDown {
+	0% {
+		margin-top: 800px;
+	}
+
+	100% {
+		margin-top: -100px;
+	}
+}
+
+#pause {
+	animation: MoveUpDown 16s linear infinite;
+	left: 8%;
+	position: absolute;
+}
+
+
+/* KEYFRAMES */
+
+@keyframes animateBubble {
+	0% {
+		margin-top: 800px;
+	}
+
+	100% {
+		margin-top: -100%;
+	}
+}
+
+@keyframes sideWays {
+	0% {
+		margin-left: 0px;
+	}
+
+	100% {
+		margin-left: 50px;
+	}
+}
+
+/* ANIMATIONS */
+
+.x1 {
+	animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+	left: -5%;
+	top: 5%;
+
+	transform: scale(0.3);
+}
+
+.x2 {
+	animation: animateBubble 13s linear infinite, sideWays 4s ease-in-out infinite alternate;
+
+	left: 5%;
+	top: 80%;
+
+	transform: scale(0.4);
+}
+
+.x3 {
+	animation: animateBubble 14s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+	left: 10%;
+	top: 40%;
+	transform: scale(0.4);
+}
+
+.x4 {
+	animation: animateBubble 11s linear infinite, sideWays 3s ease-in-out infinite alternate;
+
+	left: 20%;
+	top: 0;
+	transform: scale(0.3);
+}
+
+.x5 {
+	animation: animateBubble 13s linear infinite, sideWays 4s ease-in-out infinite alternate;
+
+	left: 30%;
+	top: 50%;
+	transform: scale(0.5);
+}
+
+.x6 {
+	animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+	left: 50%;
+	top: 0;
+	transform: scale(0.5);
+}
+
+.x7 {
+	animation: animateBubble 17s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+	left: 65%;
+	top: 70%;
+	transform: scale(0.4);
+}
+
+.x8 {
+	animation: animateBubble 14s linear infinite, sideWays 3s ease-in-out infinite alternate;
+
+	left: 80%;
+	top: 10%;
+	transform: scale(0.3);
+}
+
+.x9 {
+	animation: animateBubble 16s linear infinite, sideWays 4s ease-in-out infinite alternate;
+
+	left: 90%;
+	top: 50%;
+	transform: scale(0.3);
+}
+
+.x10 {
+	animation: animateBubble 13s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+	left: 80%;
+	top: 80%;
+	transform: scale(0.3);
+}
+
+/* OBJECTS */
+
+.bubble {
+	border-radius: 50%;
+	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+
+	height: 200px;
+	position: absolute;
+	width: 200px;
+}
+
+.bubble:after {
+
+	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+
+	border-radius: 50%;
+
+	box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+
+	content: "";
+	height: 180px;
+	left: 10px;
+	position: absolute;
+	width: 180px;
+}
