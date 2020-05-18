@@ -21,6 +21,7 @@ var dy = -(Math.random() / 2);
 var ballRadius = 10;
 var count = 0;
 var maybe = ()=>Math.floor(Math.random()*2);
+
 function drawBall() {
   ctx.beginPath();
   ctx.rect(x, y, ballRadius,ballRadius);
