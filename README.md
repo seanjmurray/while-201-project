@@ -15,4 +15,14 @@ Our goal is to create a zen like web app that gives the user a virtual fish tank
 
 ## Tasks to complete
 
+- [ ] Footer with links
+- [ ] Canvas with moving fish
+
 - [ ] Finish everything
+
+
+## Wireframe
+## Index
+![img](img/index.png)
+## About
+![img](img/about.png)
