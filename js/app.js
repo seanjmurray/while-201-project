@@ -9,34 +9,35 @@ function pauseAudio(){
   audioPlayer.pause();
 }
 
-var dpi = window.devicePixelRatio;
 
 var canvas = document.getElementById('myCanvas');
+canvas.width = canvas.scrollWidth;
+canvas.height = canvas.scrollHeight;
 var ctx = canvas.getContext('2d');
-var fish = document.getElementById('fish');
-var fishFlip = document.getElementById('fishFlip');
+var fish = new Image();
+fish.src = './img/fish.png';
+var fishFlip = new Image();
+fishFlip.src = './img/fishflip.png';
 ctx.imageSmoothingEnabled = false;
 ctx.imageSmoothingQuality = 'high';
 var fH = fish.height;
 var fW = fish.width;
 var x = canvas.width/2;
-var y = canvas.height-30;
+var y = canvas.height-100;
 var dx = Math.random();
 var dy = -(Math.random() / 2);
-var ballRadius = 20;
+var ballRadius = 10;
 var count = 0;
 var maybe = ()=>Math.floor(Math.random()*2);
-function fix_dpi() {
-  var style_height = +getComputedStyle(canvas).getPropertyValue("height").slice(0, -2);
-  var style_width = +getComputedStyle(canvas).getPropertyValue("width").slice(0, -2);
-  canvas.setAttribute('height', style_height * dpi);
-  canvas.setAttribute('width', style_width * dpi);
-}
-fix_dpi();
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // drawBall();
+  if(!fish.complete || !fishFlip.complete){
+    setTimeout(function(){
+      draw();
+    },50);
+  }
   if(Math.sign(dx)===1){
     ctx.drawImage(fishFlip,0,0,fW,fH,x,y,fW/2,fH/2);
   }else{
@@ -51,7 +52,7 @@ function draw() {
     dy = -dy;
   }
   count++;
-  if(count>1000){
+  if(count>10000){
     count = 0;
     if(maybe()>0){
       dx = Math.random();
