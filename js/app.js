@@ -32,7 +32,6 @@ var maybe = ()=>Math.floor(Math.random()*2);
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  // drawBall();
   if(!fish.complete || !fishFlip.complete){
     setTimeout(function(){
       draw();
@@ -43,6 +42,7 @@ function draw() {
   }else{
     ctx.drawImage(fish,0,0,fW,fH,x,y,fW/2,fH/2);
   }
+  console.log('here');
   x += dx;
   y += dy;
   if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
