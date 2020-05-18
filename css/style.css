@@ -1,9 +1,12 @@
 
+
+
+
 body {
 	background: #00b4ff;
 	color: #333;
 	font: 100% Lato, Arial, Sans Serif;
-	height: 100hv;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
@@ -11,12 +14,13 @@ body {
 }
 
 #myCanvas{
-	height: 100hv;
+	height: 100%;
 	width: 100%;
 }
 
 #background-wrap {
-  bottom: 0;
+	bottom: 0;
+	/* height: 600px; */
 	left: 0;
 	position: fixed;
 	right: 0;
@@ -51,14 +55,15 @@ body {
 	animation: MoveUpDown 15s linear infinite;
 	left: 1%;
 	position: absolute;
+	top: 300px;
 }
 
 @keyframes MoveUpDown{
-	0% {
-		margin-top: 800px;
+	0%, 100% {
+		margin-top: 20px;
 	}
-	100% {
-		margin-top: -100px;
+	50% {
+		margin-top: 50px;
 	}
 }
 
@@ -66,6 +71,7 @@ body {
 	animation: MoveUpDown 16s linear infinite;
 	left: 8%;
 	position: absolute;
+	top: 550px;
 }
 
 
@@ -295,4 +301,16 @@ body {
 	left: 10px;
 	position: absolute;
 	width: 180px;
+}
+
+
+footer {
+	/* background-color: tan; */
+	height: 175px;
+	position: absolute;
+	top: 85%;
+	width: 100%;
+	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%), url('https://www.csstextures.com/sand-512-T99.jpg'); background-repeat: repeat;
+	border-top-left-radius: 50% 80%;
+	border-top-right-radius: 50% 80%;
 }
