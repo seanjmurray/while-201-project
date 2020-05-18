@@ -10,10 +10,10 @@ body {
 	overflow-y: hidden;
 }
 
-
 #myCanvas{
 	height: 100%;
 	width: 100%;
+
 }
 
 #background-wrap {
@@ -94,7 +94,7 @@ body {
 	100% {
 		margin-left: 50px;
 	}
-}
+} 
 
 /* ANIMATIONS */
 
