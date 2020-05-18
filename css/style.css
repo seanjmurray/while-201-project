@@ -55,7 +55,7 @@ body {
 	animation: MoveUpDown 15s linear infinite;
 	left: 1%;
 	position: absolute;
-	top: 300px;
+	top: 575px;
 }
 
 @keyframes MoveUpDown{
@@ -305,12 +305,12 @@ body {
 
 
 footer {
-	/* background-color: tan; */
+	background-color: tan;
 	height: 175px;
 	position: absolute;
 	top: 85%;
 	width: 100%;
-	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%), url('https://www.csstextures.com/sand-512-T99.jpg'); background-repeat: repeat;
+	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%), url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); background-repeat: repeat;
 	border-top-left-radius: 50% 80%;
 	border-top-right-radius: 50% 80%;
 }
