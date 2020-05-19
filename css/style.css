@@ -318,12 +318,23 @@ footer {
 	border-top-right-radius: 60% 80%;
 }
 
+#shell {
+	width: 150px;
+	margin-left: 20%;
+	padding-bottom: 5px;
+	transition: .4s;
+}
+
+#shell:hover {
+	transform: scale(1.1);
+
+}
 
 #starfish {
 	width: 150px;
 	left: 400px;
 	/* visibility: hidden; */
-	margin-left: 20%;
+	margin-left: 5%;
 	transition: .4s;
 
 }
@@ -332,22 +343,27 @@ footer {
  transform: scale(1.1);
 }
 
+
 #rock {
 	width: 200px;
-	margin-left: 15%;
+	margin-left: 5%;
 	padding-bottom: 18px;
 	transition: .4s;
 
 }
 
 #rock:hover {
- transform: ;
+ transform: scale(1.1) ;
 }
 
 #rock2 {
-	width: 100px;
+	width: 120px;
 	margin-left: 5%;
+	transition: .4s;
+}
 
+#rock2:hover {
+	transform: scale(1.1);
 }
 
 .hidden {
