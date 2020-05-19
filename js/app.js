@@ -25,9 +25,15 @@ var x = canvas.width/2;
 var y = canvas.height-100;
 var x1 = canvas.width/3;
 var y1 = canvas.height-400;
+var x2 = canvas.width/4;
+var y2 = canvas.height-200;
+var x3 = canvas.width/5;
+var y3 = canvas.height-500;
 var ballRadius = 10;
 var test = true;
 var test1 = true;
+var test2 = true;
+var test3 = true;
 
 function draw(){
   var count = 0;
@@ -35,6 +41,10 @@ function draw(){
   var dy = -(Math.random());
   var dx1 = -(Math.random());
   var dy1 = Math.random();
+  var dx2 = Math.random();
+  var dy2 = -(Math.random());
+  var dx3 = -(Math.random());
+  var dy3 = Math.random();
   var maybe = ()=>Math.floor(Math.random()*2);
   setInterval(function(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -68,10 +78,38 @@ function draw(){
         dy1 = -dy1;
       }
     }
-    console.log('dx',dx,'dy',dy,'dx1',dx1,'dy1',dy1);
-    console.log(count);
+    if(test2){
+      if(Math.sign(dx2)===1){
+        ctx.drawImage(fishFlip,0,0,fW,fH,x2,y2,fW/2,fH/2);
+      }else{
+        ctx.drawImage(fish,0,0,fW,fH,x2,y2,fW/2,fH/2);
+      }
+      x2 += dx2;
+      y2 += dy2;
+      if(x2 + dx2 > canvas.width-50 || x2 + dx2 < 50) {
+        dx2 = -dx2;
+      }
+      if(y2 + dy2 > canvas.height-50 || y2 + dy2 < 50) {
+        dy2 = -dy2;
+      }
+    }
+    if(test3){
+      if(Math.sign(dx3)===1){
+        ctx.drawImage(fishFlip1,0,0,fW,fH,x3,y3,fW/2,fH/2);
+      }else{
+        ctx.drawImage(fish1,0,0,fW,fH,x3,y3,fW/2,fH/2);
+      }
+      x3 += dx3;
+      y3 += dy3;
+      if(x3 + dx3 > canvas.width-50 || x3 + dx3 < 50) {
+        dx3 = -dx3;
+      }
+      if(y3 + dy3 > canvas.height-50 || y3 + dy3 < 50) {
+        dy3 = -dy3;
+      }
+    }
     count++;
-    if(count>1000){
+    if(count>10000){
       count = 0;
       if(maybe()>0){
         dx = Math.random();
@@ -87,6 +125,7 @@ function draw(){
     }
   },20);
 }
+setTimeout(draw,1000);
 
 canvas.addEventListener('click', function(){
   console.log(event);
