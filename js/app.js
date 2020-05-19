@@ -52,7 +52,7 @@ function draw() {
     dy = -dy;
   }
   count++;
-  if(count>10000){
+  if(count>1000){
     count = 0;
     if(maybe()>0){
       dx = Math.random();
