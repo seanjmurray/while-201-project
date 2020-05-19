@@ -1,14 +1,4 @@
 'use strict';
-var audioPlayer = document.getElementById('soundtrack');
-
-function playAudio(){
-  audioPlayer.play();
-}
-
-function pauseAudio(){
-  audioPlayer.pause();
-}
-
 
 var canvas = document.getElementById('myCanvas');
 canvas.width = canvas.scrollWidth;
