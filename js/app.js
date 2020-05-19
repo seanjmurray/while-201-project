@@ -13,64 +13,95 @@ var canvas = document.getElementById('myCanvas');
 canvas.width = canvas.scrollWidth;
 canvas.height = canvas.scrollHeight;
 var ctx = canvas.getContext('2d');
-var fish = new Image();
-fish.src = 'img/fish.png';
-var fishFlip = new Image();
-fishFlip.src = 'img/fishflip.png';
 ctx.imageSmoothingEnabled = false;
 ctx.imageSmoothingQuality = 'high';
+var fish = document.getElementById('fish');
+var fishFlip = document.getElementById('flipFish');
+var fish1 = document.getElementById('fish1');
+var fishFlip1 = document.getElementById('flipFish1');
 var fH = fish.height;
 var fW = fish.width;
 var x = canvas.width/2;
 var y = canvas.height-100;
+var x1 = canvas.width/3;
+var y1 = canvas.height-400;
 var ballRadius = 10;
+var test = true;
+var test1 = true;
 
-var NewFish = function(img,flipImg){
-  this.dx= Math.random();
-  this.dy= -(Math.random());
-  this.img=img;
-  this.flipImg=flipImg;
-  this.count=0;
-  fishies.push(this);
-};
-NewFish.prototype.maybe = ()=>Math.floor(Math.random()*2);
-
-NewFish.prototype.draw = function(){
+function draw(){
+  var count = 0;
+  var dx = Math.random();
+  var dy = -(Math.random());
+  var dx1 = -(Math.random());
+  var dy1 = Math.random();
+  var maybe = ()=>Math.floor(Math.random()*2);
   setInterval(function(){
-    debugger;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if(Math.sign(this.dx)===1){
-      ctx.drawImage(this.flipImg,0,0,fW,fH,x,y,fW/2,fH/2);
-    }else{
-      ctx.drawImage(this.img,0,0,fW,fH,x,y,fW/2,fH/2);
+    if(test){
+      if(Math.sign(dx)===1){
+        ctx.drawImage(fishFlip,0,0,fW,fH,x,y,fW/2,fH/2);
+      }else{
+        ctx.drawImage(fish,0,0,fW,fH,x,y,fW/2,fH/2);
+      }
+      x += dx;
+      y += dy;
+      if(x + dx > canvas.width-50 || x + dx < 50) {
+        dx = -dx;
+      }
+      if(y + dy > canvas.height-50 || y + dy < 50) {
+        dy = -dy;
+      }
     }
-    console.log(this.count);
-    x += this.dx;
-    y += this.dy;
-    if(x + this.dx > canvas.width-ballRadius || x + this.dx < ballRadius) {
-      this.dx = -this.dx;
+    if(test1){
+      if(Math.sign(dx1)===1){
+        ctx.drawImage(fishFlip1,0,0,fW,fH,x1,y1,fW/2,fH/2);
+      }else{
+        ctx.drawImage(fish1,0,0,fW,fH,x1,y1,fW/2,fH/2);
+      }
+      x1 += dx1;
+      y1 += dy1;
+      if(x1 + dx1 > canvas.width-50 || x1 + dx1 < 50) {
+        dx1 = -dx1;
+      }
+      if(y1 + dy1 > canvas.height-50 || y1 + dy1 < 50) {
+        dy1 = -dy1;
+      }
     }
-    if(y + this.dy > canvas.height-ballRadius || y + this.dy < ballRadius) {
-      this.dy = -this.dy;
-    }
-    this.count++;
-    if(this.count>10000){
-      this.count = 0;
-      if(this.maybe()>0){
-        this.dx = Math.random();
-        this.dy = Math.random() / 2;
+    console.log('dx',dx,'dy',dy,'dx1',dx1,'dy1',dy1);
+    console.log(count);
+    count++;
+    if(count>1000){
+      count = 0;
+      if(maybe()>0){
+        dx = Math.random();
+        dy = Math.random() / 2;
+        dx1 = Math.random();
+        dy1 = Math.random() / 2;
       } else{
-        this.dx = -(Math.random());
-        this.dy = -(Math.random() / 2);
+        dx = -(Math.random());
+        dy = -(Math.random() / 2);
+        dx1 = -(Math.random());
+        dy1 = -(Math.random() / 2);
       }
     }
   },20);
-};
-var test = new NewFish(fish,fishFlip);
+}
+
+canvas.addEventListener('click', function(){
+  console.log(event);
+  ctx.beginPath();
+  ctx.rect(event.clientX,event.clientY,10,10);
+  ctx.fillStyle = '#000000';
+  ctx.fill();
+  ctx.closePath();
+});
 
 
 
 
+
+/////////////////////////////////HELPER//////////////////////////////////////
 
 
 

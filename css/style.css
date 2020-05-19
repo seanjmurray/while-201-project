@@ -9,6 +9,9 @@ body {
 	overflow-x: hidden;
 	overflow-y: hidden;
 }
+.hidden{
+	display: none;
+}
 
 #myCanvas{
 	height: 90vh;
