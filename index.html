@@ -7,10 +7,22 @@
   <link rel="stylesheet" href="css/reset.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
-<body id="colorProfile">
+<body id = "timeProfile">
   <header>
   </header>
   <main>
+
+  <div class="modal">
+    
+    <div class= "modal-content">
+      <span class="close">&times;</span>
+      <form>
+        <p> some stuff</p>
+      </form>
+
+    </div>
+
+  </div>
     <canvas id="myCanvas"></canvas>
     <div id="buttons">
       <audio id="soundtrack" src="nocturne.mp3"></audio>
@@ -40,15 +52,26 @@
     </div>
   </main>
   <footer>
-    <img id="starfish" src="img/starfish.png" alt="starfish" text="About Us">
-      <div class="hidden">
-        <h2>About Us</h2>
-      </div>
-    <img id="rock" src="img/rock.png" alt="rock">
-    <img id="rock2" src="img/rock2.png" alt="rock2">
+    <div>
+      <a href="index.html"><p>HOME</p><img id ="shell"src="img/shell-4345809_640.png" alt="shell"> </a>
+    </div>
+
+    <div>
+      <a href="about.html"><p>ABOUT US</p><img id="starfish" src="img/starfish.png" alt="starfish" text="About Us"> </a>
+    </div>
+
+    <div>
+      <a href="links.html"><p>LINKS</p><img id="rock" src="img/rock.png" alt="rock"> </a> 
+    </div>
+    
+    <div>
+      <p>ADD FISH</p>
+      <img id="rock2" src="img/rock2.png" alt="rock2">
+    </div>
   </footer>
   <script src="js/app.js"></script>
   <script src="js/music.js"></script>
+  <script src = "js/profile.js"></script>
 </body>
 
 </html>

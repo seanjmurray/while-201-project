@@ -14,15 +14,17 @@
     <canvas id="myCanvas"></canvas>
 
     <div> 
-      <div id="Leah"> <img src="https://via.placeholder.com/100" > <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
-      <div id="Sean"> <img src = "https://via.placeholder.com/100"> <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
-      <div id="Michael"> <img src = "https://via.placeholder.com/100"> <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
-      <div id="Stephen"> <img src = "https://via.placeholder.com/100"><p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
+      <div id="Leah"> <img src="https://via.placeholder.com/100" > <p > Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
+      <div id="Sean"> <img src = "img/sean.jpg"> <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
+      <div id="Michael"> <img src = "img/person1.jpg"> <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
+      <div id="Stephen"> <img src = "img/image.png"><p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
     </div>
     <div id="buttons">
       <audio id="soundtrack" src="nocturne.mp3"></audio>
-      <button id="play" type="button" onclick="playAudio()">On</button>
-      <button id="pause" type="button" onclick="pauseAudio()">Off</button>
+      <audio id="bubbleSounds" src="underwater.mp3"></audio>
+      <button id="audio" type="button">Music</button>
+      <button id="bubbles" type="button">Bubbles</button>
+    </div>
     <div id="background-wrap">  
       <div class="bubble x1"></div>
       <div class="bubble x2"></div>
@@ -38,12 +40,28 @@
     </div>
   </main>
   <footer>
-    <img id ="shell"src="img/shell-4345809_640.png" alt="shell">
-    <img id="starfish" src="img/starfish.png" alt="starfish" text="About Us">
-    <img id="rock" src="img/rock.png" alt="rock">
-    <img id="rock2" src="img/rock2.png" alt="rock2">
+
+    <div>
+      <a href="index.html"><p>HOME</p><img id ="shell"src="img/shell-4345809_640.png" alt="shell"> </a>
+    </div>
+
+    <div>
+      <a href="about.html"><p>ABOUT US</p><img id="starfish" src="img/starfish.png" alt="starfish" text="About Us"> </a>
+    </div>
+
+    <div>
+      <a href="links.html"><p>LINKS</p><img id="rock" src="img/rock.png" alt="rock"> </a> 
+    </div>
+    
+    <div>
+      <p>ADD FISH</p>
+      <img id="rock2" src="img/rock2.png" alt="rock2">
+    </div>
+    
   </footer>
   <script src="js/app.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/profile.js"></script>
 </body>
 
 </html>
