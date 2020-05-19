@@ -218,3 +218,40 @@ footer {
 	border-top-left-radius: 50% 80%;
 	border-top-right-radius: 50% 80%;
 }
+
+
+#starfish {
+	width: 80px;
+	left: 400px;
+	/* visibility: hidden; */
+	margin-left: 400px;
+}
+
+#starfish:hover .hidden {
+	display: block;
+}
+
+#rock {
+	width: 100px;
+	margin-left: 200px;
+	margin-bottom: 20px;
+}
+
+#rock2 {
+	width: 60px;
+	margin-left: 50px;
+}
+
+.hidden {
+	display: none;
+}
+
+.hidden:hover {
+	display: block;
+}
+
+#seaweed {
+	height: 50%;
+	margin-left: 200px;
+	margin-top: 350px;
+}
