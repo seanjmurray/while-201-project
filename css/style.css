@@ -42,6 +42,103 @@ body {
 	transition: 1s ease;
 }
 
+#Michael,
+#Leah, #Sean, #Stephen {
+	background: radial-gradient(circle at 30px 30px, #5cabff, rgb(237, 232, 232));
+	border-radius: 50%;
+	color: white;
+	display: block;
+	font-weight: bold;
+	height: 80px;
+	opacity: 50%;
+	outline: none;
+	padding: 150px;
+	text-align: center;
+	width: 200px;
+	height: 200px;
+	transition: 1s ease;
+}
+
+#Leah img {
+	transform: translateY(-4em);
+	border-radius: 50%;
+}
+
+#Sean img {
+	transform: translateY(-4em);
+	border-radius: 50%;
+}
+
+#Michael img {
+	transform: translateY(-4em);
+	border-radius: 50%;
+}
+
+#Stephen img {
+	transform: translateY(-4em);
+	border-radius: 50%;
+}
+
+
+
+
+
+#Leah {
+	animation: MoveUpDown 15s linear infinite;
+	left: 1%;
+	position: absolute;
+	top: 5%;
+}
+
+#Sean {
+	animation: MoveUpDown 15s linear infinite;
+	left: 25%;
+	position: absolute;
+	top: 20%;
+}
+
+#Michael {
+	animation: MoveUpDown 15s linear infinite;
+	left: 50%;
+	position: absolute;
+	top: 5%;
+}
+
+#Stephen {
+	animation: MoveUpDown 15s linear infinite;
+	left: 75%;
+	position: absolute;
+	top: 10%;
+}
+
+#Leah:hover, #Sean:hover, #Michael:hover, #Stephen:hover {
+	color: white;
+	font-size: 14px;
+	transform: scale(1.1);
+}
+
+#Leah p {
+	transform: translateY(-4em);
+	max-width: 200px;
+}
+
+#Sean p {
+	transform: translateY(-4em);
+	
+}
+
+#Michael p {
+	transform: translateY(-4em);
+	
+}
+
+#Stephen p {
+	transform: translateY(-4em);
+	
+}
+
+
+
 #play:hover,
 #pause:hover {
 	color: white;
@@ -211,36 +308,46 @@ body {
 
 footer {
 	background-color: tan;
-	height: 10vh;
+	height: 200px;
 	position: absolute;
-	top: 90%;
-	width: 100%;
+	top: 80%;
+	width: 120%;
+	margin-left: -70px;
 	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%), url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); background-repeat: repeat;
-	border-top-left-radius: 50% 80%;
-	border-top-right-radius: 50% 80%;
+	border-top-left-radius: 60% 80%;
+	border-top-right-radius: 60% 80%;
 }
 
 
 #starfish {
-	width: 80px;
+	width: 150px;
 	left: 400px;
 	/* visibility: hidden; */
-	margin-left: 400px;
+	margin-left: 20%;
+	transition: .4s;
+
 }
 
-#starfish:hover .hidden {
-	display: block;
+#starfish:hover {
+ transform: scale(1.1);
 }
 
 #rock {
-	width: 100px;
-	margin-left: 200px;
-	margin-bottom: 20px;
+	width: 200px;
+	margin-left: 15%;
+	padding-bottom: 18px;
+	transition: .4s;
+
+}
+
+#rock:hover {
+ transform: ;
 }
 
 #rock2 {
-	width: 60px;
-	margin-left: 50px;
+	width: 100px;
+	margin-left: 5%;
+
 }
 
 .hidden {
