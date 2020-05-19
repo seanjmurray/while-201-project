@@ -1,14 +1,5 @@
 'use strict';
-var audioPlayer = document.getElementById('soundtrack');
 
-function playAudio(){
-  audioPlayer.play();
-}
-
-function pauseAudio(){
-  audioPlayer.pause();
-}
-var fishies = [];
 var canvas = document.getElementById('myCanvas');
 canvas.width = canvas.scrollWidth;
 canvas.height = canvas.scrollHeight;
