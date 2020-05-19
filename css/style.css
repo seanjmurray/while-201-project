@@ -1,4 +1,3 @@
-
 body {
 	background: #00b4ff;
 	color: #333;
@@ -10,11 +9,13 @@ body {
 	overflow-y: hidden;
 	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%); background-repeat: repeat;
 }
+.hidden{
+	display: none;
+}
 
 #myCanvas{
 	height: 90vh;
 	width: 100%;
-	/* border: 1px solid black; */
 }
 
 #background-wrap {
@@ -26,8 +27,8 @@ body {
 	z-index: -1;
 }
 
-#play,
-#pause {
+#audio,
+#bubbles{
 	background: radial-gradient(circle at 30px 30px, #5cabff, rgb(237, 232, 232));
 	border-radius: 50%;
 	color: white;
@@ -41,6 +42,7 @@ body {
 	width: 80px;
 	transition: 1s ease;
 }
+
 
 #Michael,
 #Leah, #Sean, #Stephen {
@@ -137,24 +139,27 @@ body {
 	
 }
 
-
-
-#play:hover,
-#pause:hover {
+#audio:hover,
+#bubbles:hover{
 	color: white;
 	font-size: 14px;
 	height: 100px;
 	width: 100px;
 }
 
-
-#play {
+#audio {
 	animation: MoveUpDown 15s linear infinite;
 	left: 1%;
 	position: absolute;
-	top: 575px;
+	top: 75%;
 }
 
+#bubbles {
+	animation: MoveUpDown 12s linear infinite;
+	left: 8%;
+	position: absolute;
+	top: 80%;
+}
 
 @keyframes MoveUpDown{
 	0%, 100% {
@@ -165,21 +170,12 @@ body {
 }
 }
 
-#pause {
-	animation: MoveUpDown 16s linear infinite;
-	left: 8%;
-	position: absolute;
-	top: 550px;
-}
-
-
 /* KEYFRAMES */
 
 @keyframes animateBubble {
 	0% {
 		margin-top: 800px;
 	}
-
 	100% {
 		margin-top: -100%;
 	}
@@ -189,7 +185,6 @@ body {
 	0% {
 		margin-left: 0px;
 	}
-
 	100% {
 		margin-left: 50px;
 	}
@@ -199,25 +194,20 @@ body {
 
 .x1 {
 	animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
-
 	left: -5%;
 	top: 5%;
-
 	transform: scale(0.3);
 }
 
 .x2 {
 	animation: animateBubble 13s linear infinite, sideWays 4s ease-in-out infinite alternate;
-
 	left: 5%;
 	top: 80%;
-
 	transform: scale(0.4);
 }
 
 .x3 {
 	animation: animateBubble 14s linear infinite, sideWays 2s ease-in-out infinite alternate;
-
 	left: 10%;
 	top: 40%;
 	transform: scale(0.4);
@@ -225,7 +215,6 @@ body {
 
 .x4 {
 	animation: animateBubble 11s linear infinite, sideWays 3s ease-in-out infinite alternate;
-
 	left: 20%;
 	top: 0;
 	transform: scale(0.3);
@@ -233,7 +222,6 @@ body {
 
 .x5 {
 	animation: animateBubble 13s linear infinite, sideWays 4s ease-in-out infinite alternate;
-
 	left: 30%;
 	top: 50%;
 	transform: scale(0.5);
@@ -241,7 +229,6 @@ body {
 
 .x6 {
 	animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
-
 	left: 50%;
 	top: 0;
 	transform: scale(0.5);
@@ -249,7 +236,6 @@ body {
 
 .x7 {
 	animation: animateBubble 17s linear infinite, sideWays 2s ease-in-out infinite alternate;
-
 	left: 65%;
 	top: 70%;
 	transform: scale(0.4);
@@ -257,7 +243,6 @@ body {
 
 .x8 {
 	animation: animateBubble 14s linear infinite, sideWays 3s ease-in-out infinite alternate;
-
 	left: 80%;
 	top: 10%;
 	transform: scale(0.3);
@@ -265,7 +250,6 @@ body {
 
 .x9 {
 	animation: animateBubble 16s linear infinite, sideWays 4s ease-in-out infinite alternate;
-
 	left: 90%;
 	top: 50%;
 	transform: scale(0.3);
@@ -273,7 +257,6 @@ body {
 
 .x10 {
 	animation: animateBubble 13s linear infinite, sideWays 2s ease-in-out infinite alternate;
-
 	left: 80%;
 	top: 80%;
 	transform: scale(0.3);
@@ -284,7 +267,6 @@ body {
 .bubble {
 	border-radius: 50%;
 	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
-
 	height: 200px;
 	position: absolute;
 	width: 200px;
@@ -293,18 +275,14 @@ body {
 .bubble:after {
 
 	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
-
 	border-radius: 50%;
-
 	box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
-
 	content: "";
 	height: 180px;
 	left: 10px;
 	position: absolute;
 	width: 180px;
 }
-
 
 footer {
 	background-color: tan;
@@ -314,8 +292,14 @@ footer {
 	width: 120%;
 	margin-left: -70px;
 	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%), url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); background-repeat: repeat;
-	border-top-left-radius: 60% 80%;
-	border-top-right-radius: 60% 80%;
+	border-top-left-radius: 50% 80%;
+	border-top-right-radius: 50% 80%;
+	display: flex;
+	height: 10vh;
+	justify-content: space-evenly;
+	position: absolute;
+	top: 90%;
+	width: 100%;
 }
 
 #shell {
