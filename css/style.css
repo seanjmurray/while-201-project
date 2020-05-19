@@ -1,0 +1,367 @@
+body {
+	background: #00b4ff;
+	color: #333;
+	font: 100% Lato, Arial, Sans Serif;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%); background-repeat: repeat;
+}
+.hidden{
+	display: none;
+}
+
+#myCanvas{
+	height: 90vh;
+	width: 100%;
+}
+
+#background-wrap {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
+
+#audio,
+#bubbles{
+	background: radial-gradient(circle at 30px 30px, #5cabff, rgb(237, 232, 232));
+	border-radius: 50%;
+	color: white;
+	display: block;
+	font-weight: bold;
+	height: 80px;
+	opacity: 50%;
+	outline: none;
+	padding: 10px;
+	text-align: center;
+	width: 80px;
+	transition: 1s ease;
+}
+
+
+#Michael,
+#Leah, #Sean, #Stephen {
+	background: radial-gradient(circle at 30px 30px, #5cabff, rgb(237, 232, 232));
+	border-radius: 50%;
+	color: white;
+	display: block;
+	font-weight: bold;
+	height: 80px;
+	opacity: 50%;
+	outline: none;
+	padding: 150px;
+	text-align: center;
+	width: 200px;
+	height: 200px;
+	transition: 1s ease;
+}
+
+#Leah img {
+	transform: translateY(-4em);
+	border-radius: 50%;
+}
+
+#Sean img {
+	transform: translateY(-4em);
+	border-radius: 50%;
+}
+
+#Michael img {
+	transform: translateY(-4em);
+	border-radius: 50%;
+}
+
+#Stephen img {
+	transform: translateY(-4em);
+	border-radius: 50%;
+}
+
+
+
+
+
+#Leah {
+	animation: MoveUpDown 15s linear infinite;
+	left: 1%;
+	position: absolute;
+	top: 5%;
+}
+
+#Sean {
+	animation: MoveUpDown 15s linear infinite;
+	left: 25%;
+	position: absolute;
+	top: 20%;
+}
+
+#Michael {
+	animation: MoveUpDown 15s linear infinite;
+	left: 50%;
+	position: absolute;
+	top: 5%;
+}
+
+#Stephen {
+	animation: MoveUpDown 15s linear infinite;
+	left: 75%;
+	position: absolute;
+	top: 10%;
+}
+
+#Leah:hover, #Sean:hover, #Michael:hover, #Stephen:hover {
+	color: white;
+	font-size: 14px;
+	transform: scale(1.1);
+}
+
+#Leah p {
+	transform: translateY(-4em);
+	max-width: 200px;
+}
+
+#Sean p {
+	transform: translateY(-4em);
+	
+}
+
+#Michael p {
+	transform: translateY(-4em);
+	
+}
+
+#Stephen p {
+	transform: translateY(-4em);
+	
+}
+
+#audio:hover,
+#bubbles:hover{
+	color: white;
+	font-size: 14px;
+	height: 100px;
+	width: 100px;
+}
+
+#audio {
+	animation: MoveUpDown 15s linear infinite;
+	left: 1%;
+	position: absolute;
+	top: 75%;
+}
+
+#bubbles {
+	animation: MoveUpDown 12s linear infinite;
+	left: 8%;
+	position: absolute;
+	top: 80%;
+}
+
+@keyframes MoveUpDown{
+	0%, 100% {
+		margin-top: 20px;
+	}
+	50% {
+		margin-top: 50px;
+}
+}
+
+/* KEYFRAMES */
+
+@keyframes animateBubble {
+	0% {
+		margin-top: 800px;
+	}
+	100% {
+		margin-top: -100%;
+	}
+}
+
+@keyframes sideWays {
+	0% {
+		margin-left: 0px;
+	}
+	100% {
+		margin-left: 50px;
+	}
+} 
+
+/* ANIMATIONS */
+
+.x1 {
+	animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: -5%;
+	top: 5%;
+	transform: scale(0.3);
+}
+
+.x2 {
+	animation: animateBubble 13s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	left: 5%;
+	top: 80%;
+	transform: scale(0.4);
+}
+
+.x3 {
+	animation: animateBubble 14s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: 10%;
+	top: 40%;
+	transform: scale(0.4);
+}
+
+.x4 {
+	animation: animateBubble 11s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	left: 20%;
+	top: 0;
+	transform: scale(0.3);
+}
+
+.x5 {
+	animation: animateBubble 13s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	left: 30%;
+	top: 50%;
+	transform: scale(0.5);
+}
+
+.x6 {
+	animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: 50%;
+	top: 0;
+	transform: scale(0.5);
+}
+
+.x7 {
+	animation: animateBubble 17s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: 65%;
+	top: 70%;
+	transform: scale(0.4);
+}
+
+.x8 {
+	animation: animateBubble 14s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	left: 80%;
+	top: 10%;
+	transform: scale(0.3);
+}
+
+.x9 {
+	animation: animateBubble 16s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	left: 90%;
+	top: 50%;
+	transform: scale(0.3);
+}
+
+.x10 {
+	animation: animateBubble 13s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	left: 80%;
+	top: 80%;
+	transform: scale(0.3);
+}
+
+/* OBJECTS */
+
+.bubble {
+	border-radius: 50%;
+	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+	height: 200px;
+	position: absolute;
+	width: 200px;
+}
+
+.bubble:after {
+
+	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+	border-radius: 50%;
+	box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+	content: "";
+	height: 180px;
+	left: 10px;
+	position: absolute;
+	width: 180px;
+}
+
+footer {
+	background-color: tan;
+	height: 200px;
+	position: absolute;
+	top: 80%;
+	width: 120%;
+	margin-left: -70px;
+	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%), url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); background-repeat: repeat;
+	border-top-left-radius: 50% 80%;
+	border-top-right-radius: 50% 80%;
+	display: flex;
+	height: 10vh;
+	justify-content: space-evenly;
+	position: absolute;
+	top: 90%;
+	width: 100%;
+}
+
+#shell {
+	width: 150px;
+	margin-left: 20%;
+	padding-bottom: 5px;
+	transition: .4s;
+}
+
+#shell:hover {
+	transform: scale(1.1);
+
+}
+
+#starfish {
+	width: 150px;
+	left: 400px;
+	/* visibility: hidden; */
+	margin-left: 5%;
+	transition: .4s;
+
+}
+
+#starfish:hover {
+ transform: scale(1.1);
+}
+
+
+#rock {
+	width: 200px;
+	margin-left: 5%;
+	padding-bottom: 18px;
+	transition: .4s;
+
+}
+
+#rock:hover {
+ transform: scale(1.1) ;
+}
+
+#rock2 {
+	width: 120px;
+	margin-left: 5%;
+	transition: .4s;
+}
+
+#rock2:hover {
+	transform: scale(1.1);
+}
+
+.hidden {
+	display: none;
+}
+
+.hidden:hover {
+	display: block;
+}
+
+#seaweed {
+	height: 50%;
+	margin-left: 200px;
+	margin-top: 350px;
+}
+
+
