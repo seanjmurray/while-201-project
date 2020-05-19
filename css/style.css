@@ -8,12 +8,13 @@ body {
 	padding: 0;
 	overflow-x: hidden;
 	overflow-y: hidden;
+	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%); background-repeat: repeat;
 }
 
 #myCanvas{
 	height: 90vh;
 	width: 100%;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 }
 
 #background-wrap {
@@ -218,3 +219,42 @@ footer {
 	border-top-left-radius: 50% 80%;
 	border-top-right-radius: 50% 80%;
 }
+
+
+#starfish {
+	width: 80px;
+	left: 400px;
+	/* visibility: hidden; */
+	margin-left: 400px;
+}
+
+#starfish:hover .hidden {
+	display: block;
+}
+
+#rock {
+	width: 100px;
+	margin-left: 200px;
+	margin-bottom: 20px;
+}
+
+#rock2 {
+	width: 60px;
+	margin-left: 50px;
+}
+
+.hidden {
+	display: none;
+}
+
+.hidden:hover {
+	display: block;
+}
+
+#seaweed {
+	height: 50%;
+	margin-left: 200px;
+	margin-top: 350px;
+}
+
+
