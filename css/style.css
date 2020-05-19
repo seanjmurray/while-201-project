@@ -10,6 +10,9 @@ body {
 	overflow-y: hidden;
 	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%); background-repeat: repeat;
 }
+.hidden{
+	display: none;
+}
 
 #myCanvas{
 	height: 90vh;
