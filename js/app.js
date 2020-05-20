@@ -25,7 +25,7 @@ var test = true;
 var test1 = true;
 var test2 = true;
 var test3 = true;
-
+/////////////////////////////////////////////////////Draws each fish every 20ms/////////////////////////////////////////////////////////
 function draw(){
   var count = 0;
   var dx = Math.random();
@@ -36,17 +36,20 @@ function draw(){
   var dy2 = -(Math.random());
   var dx3 = -(Math.random());
   var dy3 = Math.random();
+  ////////////////////////////////// maybe function returns 1 or 0///////////
   var maybe = ()=>Math.floor(Math.random()*2);
+  ////runs every 20 ms////
   setInterval(function(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);///clears canvas to start
     if(test){
-      if(Math.sign(dx)===1){
+      if(Math.sign(dx)===1){// returns 1 or -1
         ctx.drawImage(fishFlip,0,0,fW,fH,x,y,fW/2,fH/2);
       }else{
         ctx.drawImage(fish,0,0,fW,fH,x,y,fW/2,fH/2);
       }
       x += dx;
       y += dy;
+      /// hitbox on fish
       if(x + dx > canvas.width-50 || x + dx < 50) {
         dx = -dx;
       }
