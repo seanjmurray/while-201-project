@@ -183,7 +183,7 @@ addFish.addEventListener('submit', function () {
   var redFish = event.target[2].checked;
   var yellowFish = event.target[3].checked;
   var purpleFish = event.target[4].checked;
-  choices.push([blueFish, spottedFish, redFish, yellowFish, purpleFish]);
+  choices.push([redFish, blueFish, spottedFish, yellowFish, purpleFish]);
   var stringFish = JSON.stringify(choices);
   localStorage.setItem('userFish', stringFish);
   window.requestAnimationFrame(draw);
