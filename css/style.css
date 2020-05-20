@@ -1,23 +1,22 @@
 body {
-	/* background: #00b4ff; */
-	color: #333;
+	color: #fff;
 	font: 100% Lato, Arial, Sans Serif;
 	height: 100%;
-	margin: 0;
-	padding: 0;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	/* background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%); background-repeat: repeat; */
+	text-align: center;
 }
-.hidden{
+
+.hidden {
 	display: none;
 }
 
-#myCanvas{
+#myCanvas {
 	height: 100vh;
 	width: 100%;
 }
 
+/* bubble container */
 #background-wrap {
 	bottom: 0;
 	left: 0;
@@ -27,8 +26,9 @@ body {
 	z-index: -1;
 }
 
+/* play and pause buttons */
 #audio,
-#bubbles{
+#bubbles {
 	background: radial-gradient(circle at 30px 30px, #5cabff, rgb(237, 232, 232));
 	border-radius: 50%;
 	color: white;
@@ -43,110 +43,8 @@ body {
 	transition: 1s ease;
 }
 
-#Michael,
-#Leah, #Sean, #Stephen {
-	background: radial-gradient(circle at 30px 30px, #5cabff, rgb(237, 232, 232));
-	border-radius: 50%;
-	color: white;
-	display: block;
-	font-weight: bold;
-	opacity: 50%;
-	outline: none;
-	padding: 100px;
-	text-align: center;
-	width: 200px;
-	height: 200px;
-	transition: 1s ease;
-}
-
-#Leah img {
-	transform: translateY(-4em);
-	border-radius: 50%;
-	width: 100px;
-}
-
-#Sean img {
-	transform: translateY(-4em);
-	border-radius: 50%;
-	width: 100px;
-}
-
-#Michael img {
-	transform: translateY(-4em);
-	border-radius: 50%;
-	width: 100px;
-}
-
-#Stephen img {
-	transform: translateY(-4em);
-	border-radius: 50%;
-	width: 100px;
-}
-
-#Leah {
-	animation: MoveUpDown 15s linear infinite;
-	left: -5%;
-	position: absolute;
-	top: 5%;
-}
-
-#Sean {
-	animation: MoveUpDown 15s linear infinite;
-	left: 20%;
-	position: absolute;
-	top: 20%;
-}
-
-#Michael {
-	animation: MoveUpDown 15s linear infinite;
-	right: 20%;
-	position: absolute;
-	top: 5%;
-}
-
-#Stephen {
-	animation: MoveUpDown 15s linear infinite;
-	right: -5%;
-	position: absolute;
-	top: 10%;
-}
-
-#Leah:hover, #Sean:hover, #Michael:hover, #Stephen:hover {
-	color: white;
-	font-size: 14px;
-	transform: scale(1.1);
-	width: 200px;
-	height: 200px;
-}
-
-#Leah:hover .hidden, #Sean:hover .hidden, #Michael:hover .hidden, #Stephen:hover .hidden {
-	display: block;
-	
-}
-
-#Leah p {
-	transform: translateY(-4em);
-	max-width: 200px;
-}
-
-#Sean p {
-	transform: translateY(-4em);
-	
-}
-
-#Michael p {
-	transform: translateY(-4em);
-	
-}
-
-#Stephen p {
-	transform: translateY(-4em);
-	
-}
-
 #audio:hover,
-#bubbles:hover{
-	color: white;
+#bubbles:hover {
 	font-size: 14px;
 	height: 100px;
 	width: 100px;
@@ -163,17 +61,21 @@ body {
 	animation: MoveUpDown 12s linear infinite;
 	left: 8%;
 	position: absolute;
-	top: 80%;
+	top: 72%;
 }
 
-@keyframes MoveUpDown{
-	0%, 100% {
+@keyframes MoveUpDown {
+
+	0%,
+	100% {
 		margin-top: 20px;
 	}
+
 	50% {
 		margin-top: 50px;
+	}
 }
-}
+
 
 /* KEYFRAMES */
 
@@ -181,6 +83,7 @@ body {
 	0% {
 		margin-top: 800px;
 	}
+
 	100% {
 		margin-top: -100%;
 	}
@@ -190,10 +93,11 @@ body {
 	0% {
 		margin-left: 0px;
 	}
+
 	100% {
 		margin-left: 50px;
 	}
-} 
+}
 
 /* ANIMATIONS */
 
@@ -291,9 +195,9 @@ body {
 
 footer {
 	background-color: tan;
-	position: absolute;
 	width: 100%;
-	background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%), url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); background-repeat: repeat;
+	background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%), url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+	background-repeat: repeat;
 	border-top-left-radius: 90% 80%;
 	border-top-right-radius: 90% 80%;
 	display: flex;
@@ -309,9 +213,11 @@ footer {
 	transition: .4s;
 }
 
-#shell:hover {
+#shell:hover,
+#starfish:hover,
+#rock:hover,
+#rock2:hover {
 	transform: scale(1.1);
-
 }
 
 a {
@@ -328,7 +234,7 @@ div a p {
 }
 
 div a:hover p {
-	
+
 	display: block;
 	text-align: center;
 }
@@ -344,25 +250,13 @@ footer div:hover {
 #starfish {
 	width: 150px;
 	left: 400px;
-	/* visibility: hidden; */
 	transition: .4s;
-
 }
-
-#starfish:hover {
- transform: scale(1.1);
-}
-
 
 #rock {
 	width: 200px;
 	padding-bottom: 18px;
 	transition: .4s;
-
-}
-
-#rock:hover {
- transform: scale(1.1) ;
 }
 
 #rock2 {
@@ -370,60 +264,52 @@ footer div:hover {
 	transition: .4s;
 }
 
-#rock2:hover {
-	transform: scale(1.1);
-}
-
-/* .hidden {
-	display: none;
-}
-
-.hidden:hover {
-	display: block;
-} */
-
-#seaweed {
-	height: 50%;
-	margin-left: 200px;
-	margin-top: 350px;
-}
-
 /* The Modal (background) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+#modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; 
+	background-color: #00B4FF;
+	border-radius: 10px;
+	font-size: 20px;
+	margin: 15% auto;
+	/* 15% from the top and centered */
+	padding: 0 20px 20px 20px;
+	border: 1px solid #888;
+	opacity: 90%;
+	width: 50%;
+}
+
+.modalPic {
+	height: 2em;
+}
+
+.blur {
+	filter: blur(4px);
 }
 
 /* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
+#close {
+	color: #000;
+	position: relative;
+	/* top: 20%; */
+	left: 48%;
+	font-size: 50px;
 	font-weight: bold;
 	transition: .3s;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+#close:hover,
+#close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
-
-

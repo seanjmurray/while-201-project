@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zen Aquarium</title>
   <link rel="stylesheet" href="css/reset.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/about.css" type="text/css">
 </head>
+
 <body>
   <header>
   </header>
   <main>
     <canvas id="myCanvas"></canvas>
 
+
     <div> 
-      <div id="Leah"> <img src="https://via.placeholder.com/100" > <p > Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
-      <div id="Sean"> <img src = "img/sean.jpg"> <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
-      <div id="Michael"> <img src = "img/person1.jpg"> <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
-      <div id="Stephen"> <img src = "img/image.png"><p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque asperiores laboriosam aliquam, ea sequi facilis dignissimos fuga exercitationem aliquid quidem commodi iusto vitae quam doloribus reiciendis alias maxime consectetur ab! </p> </div>
+      <div id="Leah"> <img src="img/leah.jpg" class="headshot" > <p class="bio"> Leah Russo is a Rochester-based software developer with an interest in graphic design who loves to spend her free time crocheting. </p> </div>
+      <div id="Sean"> <img src = "img/sean.jpg" class="headshot"> <p class="bio">Sean Murray is a Seattle based software developer with experience solving complex real world problems in a non code environment.  Motivated to build progressive web applications in modern frameworks. </p> </div>
+      <div id="Michael"> <img src = "img/person1.jpg" class="headshot"> <p class="bio"> Michael Refvem is an HTML5, CSS and JavaScript programmer with a background in Classical Piano. He is entering the field of Web Development and looking forward to building beautiful websites. </p> </div>
+      <div id="Stephen"> <img src = "img/image.png" class="headshot"><p class="bio">Steve Baldock is a Seattle-based software developer seeking the intersection of thoughtful product design and audio technology. </p> </div>
     </div>
     <div id="buttons">
       <audio id="soundtrack" src="nocturne.mp3"></audio>
@@ -25,7 +29,7 @@
       <button id="audio" type="button">Music</button>
       <button id="bubbles" type="button">Bubbles</button>
     </div>
-    <div id="background-wrap">  
+    <div id="background-wrap">
       <div class="bubble x1"></div>
       <div class="bubble x2"></div>
       <div class="bubble x3"></div>
@@ -36,28 +40,35 @@
       <div class="bubble x8"></div>
       <div class="bubble x9"></div>
       <div class="bubble x10"></div>
-      <img id="seaweed" src="img/seaweed1.png" alt="seaweed">
     </div>
   </main>
   <footer>
 
     <div>
-      <a href="index.html"><p>HOME</p><img id ="shell"src="img/shell-4345809_640.png" alt="shell"> </a>
+      <a href="index.html">
+        <p>HOME</p><img id="shell" src="img/shell-4345809_640.png" alt="shell">
+      </a>
     </div>
 
     <div>
-      <a href="about.html"><p>ABOUT US</p><img id="starfish" src="img/starfish.png" alt="starfish" text="About Us"> </a>
+      <a href="about.html">
+        <p>ABOUT US</p><img id="starfish" src="img/starfish.png" alt="starfish" text="About Us">
+      </a>
     </div>
 
     <div>
-      <a href="links.html"><p>LINKS</p><img id="rock" src="img/rock.png" alt="rock"> </a> 
+      <a href="links.html">
+        <p>LINKS</p><img id="rock" src="img/rock.png" alt="rock">
+      </a>
     </div>
-    
+
     <div>
-      <p>ADD FISH</p>
-      <img id="rock2" src="img/rock2.png" alt="rock2">
+      <a>
+        <p>ADD FISH</p>
+        <img id="rock2" src="img/rock2.png" alt="rock2">
+      </a>
     </div>
-    
+
   </footer>
   <script src="js/app.js"></script>
   <script src="js/music.js"></script>

@@ -1,0 +1,53 @@
+#Michael,
+#Leah, #Sean, #Stephen {
+	background: radial-gradient(circle at 30px 30px, #5cabff, rgb(237, 232, 232));
+	border-radius: 50%;
+	font-weight: bold;
+	opacity: 50%;
+	outline: none;
+	padding: 100px;
+	width: 200px;
+	height: 200px;
+  transition: 1s ease;
+  position: absolute;
+  animation: MoveUpDown 15s linear infinite;
+}
+
+.headshot {
+  transform: translateY(-4em);
+	border-radius: 50%;
+	width: 100px;
+}
+
+#Leah {
+	left: -5%;
+	top: 5%;
+}
+
+#Sean {
+	left: 20%;
+	top: 20%;
+}
+
+#Michael {
+	right: 20%;
+	top: 5%;
+}
+
+#Stephen {
+	right: -5%;
+	top: 10%;
+}
+
+#Leah:hover, #Sean:hover, #Michael:hover, #Stephen:hover {
+	font-size: 14px;
+	transform: scale(1.1);
+	width: 200px;
+	height: 200px;
+}
+
+.bio {
+  transform: translateY(-4em);
+}
+	
+
