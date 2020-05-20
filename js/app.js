@@ -34,131 +34,135 @@ var test1 = true;
 var test2 = true;
 var test3 = true;
 var test4 = true;
-var choices = [];
+var choices = [[true,false,false,false,false]];
+var fishSwitch = false;
 /////////////////////////////////////////////////////Draws each fish every 20ms/////////////////////////////////////////////////////////
-function draw(redFish, blueFish, spotFish, yellowFish, purpleFish){
-  var count = 0;
-  var dx = Math.random();
-  var dy = -(Math.random());
-  var dx1 = -(Math.random());
-  var dy1 = Math.random();
-  var dx2 = Math.random();
-  var dy2 = -(Math.random());
-  var dx3 = -(Math.random());
-  var dy3 = Math.random();
-  var dx4 = Math.random();
-  var dy4 = Math.random();
-  ////////////////////////////////// maybe function returns 1 or 0///////////
-  var maybe = ()=>Math.floor(Math.random()*2);
-  ////runs every 20 ms////
-  setInterval(function(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);///clears canvas to start
-    if(blueFish){
-      if(Math.sign(dx)===1){// returns 1 or -1
-        ctx.drawImage(blue,0,0,fW,fH,x,y,fW/2,fH/2);
-      }else{
-        ctx.drawImage(blueFlip,0,0,fW,fH,x,y,fW/2,fH/2);
-      }
-      x += dx;
-      y += dy;
-      /// hitbox on fish
-      if(x + dx > canvas.width-300 || x + dx < 0) {
-        dx = -dx;
-      }
-      if(y + dy > (canvas.height/100) *55 || y + dy < -150) {
-        dy = -dy;
-      }
+var count = 0;
+var dx = Math.random();
+var dy = -(Math.random());
+var dx1 = -(Math.random());
+var dy1 = Math.random();
+var dx2 = Math.random();
+var dy2 = -(Math.random());
+var dx3 = -(Math.random());
+var dy3 = Math.random();
+var dx4 = Math.random();
+var dy4 = Math.random();
+////////////////////////////////// maybe function returns 1 or 0///////////
+var maybe = ()=>Math.floor(Math.random()*2);
+////runs every 20 ms////
+
+function makeFish(redFish, blueFish, spotFish, yellowFish, purpleFish){
+  debugger;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);///clears canvas to start
+  if(blueFish){
+    if(Math.sign(dx)===1){// returns 1 or -1
+      ctx.drawImage(blue,0,0,fW,fH,x,y,fW/2,fH/2);
+    }else{
+      ctx.drawImage(blueFlip,0,0,fW,fH,x,y,fW/2,fH/2);
     }
-    if(spotFish){
-      if(Math.sign(dx1)===1){
-        ctx.drawImage(spotted,0,0,fW,fH,x1,y1,fW/2,fH/2);
-      }else{
-        ctx.drawImage(spottedFlip,0,0,fW,fH,x1,y1,fW/2,fH/2);
-      }
-      x1 += dx1;
-      y1 += dy1;
-      if(x1 + dx1 > canvas.width-300 || x1 + dx1 < 0) {
-        dx1 = -dx1;
-      }
-      if(y1 + dy1 > (canvas.height/100) *55 || y1 + dy1 < -150) {
-        dy1 = -dy1;
-      }
+    x += dx;
+    y += dy;
+    /// hitbox on fish
+    if(x + dx > canvas.width-300 || x + dx < 0) {
+      dx = -dx;
     }
-    if(redFish){
-      if(Math.sign(dx2)===1){
-        ctx.drawImage(red,0,0,fW,fH,x2,y2,fW/2,fH/2);
-      }else{
-        ctx.drawImage(redFlip,0,0,fW,fH,x2,y2,fW/2,fH/2);
-      }
-      x2 += dx2;
-      y2 += dy2;
-      if(x2 + dx2 > canvas.width-300 || x2 + dx2 < 0) {
-        dx2 = -dx2;
-      }
-      if(y2 + dy2 > (canvas.height/100) *55 || y2 + dy2 < -150) {
-        dy2 = -dy2;
-      }
+    if(y + dy > (canvas.height/100) *55 || y + dy < -150) {
+      dy = -dy;
     }
-    if(yellowFish){
-      if(Math.sign(dx3)===1){
-        ctx.drawImage(yellow,0,0,fW,fH,x3,y3,fW/2,fH/2);
-      }else{
-        ctx.drawImage(yellowFlip,0,0,fW,fH,x3,y3,fW/2,fH/2);
-      }
-      x3 += dx3;
-      y3 += dy3;
-      if(x3 + dx3 > canvas.width-300 || x3 + dx3 < 0) {
-        dx3 = -dx3;
-      }
-      if(y3 + dy3 > (canvas.height/100) *55 || y3 + dy3 < -150) {
-        dy3 = -dy3;
-      }
+  }
+  if(spotFish){
+    if(Math.sign(dx1)===1){
+      ctx.drawImage(spotted,0,0,fW,fH,x1,y1,fW/2,fH/2);
+    }else{
+      ctx.drawImage(spottedFlip,0,0,fW,fH,x1,y1,fW/2,fH/2);
     }
-    if(purpleFish){
-      if(Math.sign(dx4)===1){
-        ctx.drawImage(purple,0,0,fW,fH,x4,y4,fW/2,fH/2);
-      }else{
-        ctx.drawImage(purpleFlip,0,0,fW,fH,x4,y4,fW/2,fH/2);
-      }
-      x4 += dx4;
-      y4 += dy4;
-      if(x4 + dx4 > canvas.width-300 || x4 + dx4 < 0) {
-        dx4 = -dx4;
-      }
-      if(y4 + dy4 > (canvas.height/100) *55 || y4 + dy4 < -150) {
-        dy4 = -dy4;
-      }
+    x1 += dx1;
+    y1 += dy1;
+    if(x1 + dx1 > canvas.width-300 || x1 + dx1 < 0) {
+      dx1 = -dx1;
     }
-    count++;
-    if(count>5000){
-      count = 0;
-      if(maybe()>0){
-        dx = Math.random();
-        dy = -(Math.random()) / 2;
-        dx1 = Math.random();
-        dy1 = -(Math.random()) / 2;
-        dx2 = Math.random();
-        dy2 = -(Math.random()) / 2;
-        dx3 = Math.random();
-        dy3 = -(Math.random()) / 2;
-        dx4 = Math.random();
-        dy4 = -(Math.random()) / 2;
-      } else{
-        dx = -(Math.random());
-        dy = Math.random() / 2;
-        dx1 = -(Math.random());
-        dy1 = Math.random() / 2;
-        dx2 = -(Math.random());
-        dy2 = Math.random() / 2;
-        dx3 = -(Math.random());
-        dy3 = Math.random() / 2;
-        dx4 = -(Math.random());
-        dy4 = Math.random() / 2;
-      }
+    if(y1 + dy1 > (canvas.height/100) *55 || y1 + dy1 < -150) {
+      dy1 = -dy1;
     }
-  },20);
+  }
+  if(redFish){
+    if(Math.sign(dx2)===1){
+      ctx.drawImage(red,0,0,fW,fH,x2,y2,fW/2,fH/2);
+    }else{
+      ctx.drawImage(redFlip,0,0,fW,fH,x2,y2,fW/2,fH/2);
+    }
+    x2 += dx2;
+    y2 += dy2;
+    if(x2 + dx2 > canvas.width-300 || x2 + dx2 < 0) {
+      dx2 = -dx2;
+    }
+    if(y2 + dy2 > (canvas.height/100) *55 || y2 + dy2 < -150) {
+      dy2 = -dy2;
+    }
+  }
+  if(yellowFish){
+    if(Math.sign(dx3)===1){
+      ctx.drawImage(yellow,0,0,fW,fH,x3,y3,fW/2,fH/2);
+    }else{
+      ctx.drawImage(yellowFlip,0,0,fW,fH,x3,y3,fW/2,fH/2);
+    }
+    x3 += dx3;
+    y3 += dy3;
+    if(x3 + dx3 > canvas.width-300 || x3 + dx3 < 0) {
+      dx3 = -dx3;
+    }
+    if(y3 + dy3 > (canvas.height/100) *55 || y3 + dy3 < -150) {
+      dy3 = -dy3;
+    }
+  }
+  if(purpleFish){
+    if(Math.sign(dx4)===1){
+      ctx.drawImage(purple,0,0,fW,fH,x4,y4,fW/2,fH/2);
+    }else{
+      ctx.drawImage(purpleFlip,0,0,fW,fH,x4,y4,fW/2,fH/2);
+    }
+    x4 += dx4;
+    y4 += dy4;
+    if(x4 + dx4 > canvas.width-300 || x4 + dx4 < 0) {
+      dx4 = -dx4;
+    }
+    if(y4 + dy4 > (canvas.height/100) *55 || y4 + dy4 < -150) {
+      dy4 = -dy4;
+    }
+  }
+  count++;
+  if(count>5000){
+    count = 0;
+    if(maybe()>0){
+      dx = Math.random();
+      dy = -(Math.random()) / 2;
+      dx1 = Math.random();
+      dy1 = -(Math.random()) / 2;
+      dx2 = Math.random();
+      dy2 = -(Math.random()) / 2;
+      dx3 = Math.random();
+      dy3 = -(Math.random()) / 2;
+      dx4 = Math.random();
+      dy4 = -(Math.random()) / 2;
+    } else{
+      dx = -(Math.random());
+      dy = Math.random() / 2;
+      dx1 = -(Math.random());
+      dy1 = Math.random() / 2;
+      dx2 = -(Math.random());
+      dy2 = Math.random() / 2;
+      dx3 = -(Math.random());
+      dy3 = Math.random() / 2;
+      dx4 = -(Math.random());
+      dy4 = Math.random() / 2;
+    }
+  }
+  requestAnimationFrame(makeFish(redFish, blueFish, spotFish, yellowFish, purpleFish));
 }
-setTimeout(draw(choices[0], choices[1], choices[2], choices[3], choices[4]),1000);
+
+
+
 
 canvas.addEventListener('click', function(){
   console.log(event);
@@ -170,7 +174,7 @@ canvas.addEventListener('click', function(){
 });
 
 
-var addFish = document.getElementById('add-fish')
+var addFish = document.getElementById('add-fish');
 addFish.addEventListener('submit', function(){
   choices = [];
   event.preventDefault();
@@ -183,7 +187,35 @@ addFish.addEventListener('submit', function(){
 
 });
 
+var modal = document.getElementById('modal');
 
+var span = document.getElementById('close');
+span.addEventListener('click', closeModal );
+var rock2 = document.getElementById('rock2');
+rock2.addEventListener('click', openModal);
+
+function closeModal(){
+  // display to none
+  modal.style.display = 'none';
+  blurContent.removeAttribute('class', 'blur');
+  fishSwitch = true;
+  window.requestAnimationFrame(makeFish(choices[0][0], choices[0][1], choices[0][2], choices[0][3], choices[0][4]),1000);
+}
+function openModal(){
+  modal.style.display = 'block';
+  blurContent.setAttribute('class', 'blur');
+}
+var blurContent = document.getElementById ('blur');
+
+span.onclick = function() {
+  modal.style.display = 'none';
+};
+
+
+if(!localStorage.getItem('userFish')){
+  window.requestAnimationFrame(makeFish(choices[0][0], choices[0][1], choices[0][2], choices[0][3], choices[0][4]),1000);
+  openModal();
+}
 
 
 
