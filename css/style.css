@@ -256,7 +256,7 @@ footer div:hover {
 
 /* The Modal (background) */
 #modal {
-  display: none;
+	display: none;
   position: fixed;
   z-index: 1; 
   left: 0;
@@ -267,15 +267,22 @@ footer div:hover {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #00B4FF;
+	background-color: #00B4FF;
+	border-radius: 10px;
+	font-size: 20px;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 0 20px 20px 20px;
-  border: 1px solid #888;
-  width: 80%; 
+	border: 1px solid #888;
+	opacity: 90%;
+  width: 50%; 
 }
 
 .modalPic {
 	height: 2em;
+}
+
+.blur{
+	filter: blur(4px);
 }
 
 /* The Close Button */

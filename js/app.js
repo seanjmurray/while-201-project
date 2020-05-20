@@ -36,7 +36,7 @@ var test3 = true;
 var test4 = true;
 var choices = [];
 /////////////////////////////////////////////////////Draws each fish every 20ms/////////////////////////////////////////////////////////
-function draw(){
+function draw(redFish, blueFish, spotFish, yellowFish, purpleFish){
   var count = 0;
   var dx = Math.random();
   var dy = -(Math.random());
@@ -53,7 +53,7 @@ function draw(){
   ////runs every 20 ms////
   setInterval(function(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);///clears canvas to start
-    if(test){
+    if(blueFish){
       if(Math.sign(dx)===1){// returns 1 or -1
         ctx.drawImage(blue,0,0,fW,fH,x,y,fW/2,fH/2);
       }else{
@@ -69,7 +69,7 @@ function draw(){
         dy = -dy;
       }
     }
-    if(test1){
+    if(spotFish){
       if(Math.sign(dx1)===1){
         ctx.drawImage(spotted,0,0,fW,fH,x1,y1,fW/2,fH/2);
       }else{
@@ -84,7 +84,7 @@ function draw(){
         dy1 = -dy1;
       }
     }
-    if(test2){
+    if(redFish){
       if(Math.sign(dx2)===1){
         ctx.drawImage(red,0,0,fW,fH,x2,y2,fW/2,fH/2);
       }else{
@@ -99,7 +99,7 @@ function draw(){
         dy2 = -dy2;
       }
     }
-    if(test3){
+    if(yellowFish){
       if(Math.sign(dx3)===1){
         ctx.drawImage(yellow,0,0,fW,fH,x3,y3,fW/2,fH/2);
       }else{
@@ -114,7 +114,7 @@ function draw(){
         dy3 = -dy3;
       }
     }
-    if(test4){
+    if(purpleFish){
       if(Math.sign(dx4)===1){
         ctx.drawImage(purple,0,0,fW,fH,x4,y4,fW/2,fH/2);
       }else{
@@ -158,7 +158,7 @@ function draw(){
     }
   },20);
 }
-setTimeout(draw,1000);
+setTimeout(draw(choices[0], choices[1], choices[2], choices[3], choices[4]),1000);
 
 canvas.addEventListener('click', function(){
   console.log(event);
@@ -180,7 +180,7 @@ addFish.addEventListener('submit', function(){
   var yellowFish = event.target[3].checked;
   var purpleFish = event.target[4].checked;
   choices.push([blueFish, spottedFish, redFish, yellowFish, purpleFish]);
-  
+
 });
 
 
