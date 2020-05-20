@@ -4,8 +4,13 @@ var canvas = document.getElementById('myCanvas');
 canvas.width = canvas.scrollWidth;
 canvas.height = canvas.scrollHeight;
 var ctx = canvas.getContext('2d');
+var addFish = document.getElementById('add-fish');
 ctx.imageSmoothingEnabled = false;
 ctx.imageSmoothingQuality = 'high';
+var modal = document.getElementById('modal');
+var blurContent = document.getElementById('blur');
+var rock2 = document.getElementById('rock2');
+var span = document.getElementById('close');
 var blue = document.getElementById('blue');
 var blueFlip = document.getElementById('blueFlip');
 var spotted = document.getElementById('spotted');
@@ -18,25 +23,19 @@ var purple = document.getElementById('purple');
 var purpleFlip = document.getElementById('purpleFlip');
 var fH = blue.height;
 var fW = blue.width;
-var x = canvas.width/2;
-var y = canvas.height/2;
-var x1 = canvas.width/3;
-var y1 = canvas.height/3;
-var x2 = canvas.width/4;
-var y2 = canvas.height/4;
-var x3 = canvas.width/5;
-var y3 = canvas.height/5;
-var x4 = canvas.width/6;
-var y4 = canvas.height/6;
-var ballRadius = 10;
-var test = true;
-var test1 = true;
-var test2 = true;
-var test3 = true;
-var test4 = true;
-var choices = [[true,false,false,false,false]];
-var fishSwitch = false;
-/////////////////////////////////////////////////////Draws each fish every 20ms/////////////////////////////////////////////////////////
+var x = canvas.width / 2;
+var y = canvas.height / 2;
+var x1 = canvas.width / 3;
+var y1 = canvas.height / 3;
+var x2 = canvas.width / 4;
+var y2 = canvas.height / 4;
+var x3 = canvas.width / 5;
+var y3 = canvas.height / 5;
+var x4 = canvas.width / 6;
+var y4 = canvas.height / 6;
+var choices = [
+  [true, false, false, false, false]
+];
 var count = 0;
 var dx = Math.random();
 var dy = -(Math.random());
@@ -49,92 +48,90 @@ var dy3 = Math.random();
 var dx4 = Math.random();
 var dy4 = Math.random();
 ////////////////////////////////// maybe function returns 1 or 0///////////
-var maybe = ()=>Math.floor(Math.random()*2);
-////runs every 20 ms////
+var maybe = () => Math.floor(Math.random() * 2);
 
-function makeFish(redFish, blueFish, spotFish, yellowFish, purpleFish){
-  debugger;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);///clears canvas to start
-  if(blueFish){
-    if(Math.sign(dx)===1){// returns 1 or -1
-      ctx.drawImage(blue,0,0,fW,fH,x,y,fW/2,fH/2);
-    }else{
-      ctx.drawImage(blueFlip,0,0,fW,fH,x,y,fW/2,fH/2);
+function makeFish(redFish, blueFish, spotFish, yellowFish, purpleFish) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); ///clears canvas to start
+  if (blueFish) {
+    if (Math.sign(dx) === 1) { // returns 1 or -1
+      ctx.drawImage(blue, 0, 0, fW, fH, x, y, fW / 2, fH / 2);
+    } else {
+      ctx.drawImage(blueFlip, 0, 0, fW, fH, x, y, fW / 2, fH / 2);
     }
     x += dx;
     y += dy;
     /// hitbox on fish
-    if(x + dx > canvas.width-300 || x + dx < 0) {
+    if (x + dx > canvas.width - 300 || x + dx < 0) {
       dx = -dx;
     }
-    if(y + dy > (canvas.height/100) *55 || y + dy < -150) {
+    if (y + dy > (canvas.height / 100) * 55 || y + dy < -150) {
       dy = -dy;
     }
   }
-  if(spotFish){
-    if(Math.sign(dx1)===1){
-      ctx.drawImage(spotted,0,0,fW,fH,x1,y1,fW/2,fH/2);
-    }else{
-      ctx.drawImage(spottedFlip,0,0,fW,fH,x1,y1,fW/2,fH/2);
+  if (spotFish) {
+    if (Math.sign(dx1) === 1) {
+      ctx.drawImage(spotted, 0, 0, fW, fH, x1, y1, fW / 2, fH / 2);
+    } else {
+      ctx.drawImage(spottedFlip, 0, 0, fW, fH, x1, y1, fW / 2, fH / 2);
     }
     x1 += dx1;
     y1 += dy1;
-    if(x1 + dx1 > canvas.width-300 || x1 + dx1 < 0) {
+    if (x1 + dx1 > canvas.width - 300 || x1 + dx1 < 0) {
       dx1 = -dx1;
     }
-    if(y1 + dy1 > (canvas.height/100) *55 || y1 + dy1 < -150) {
+    if (y1 + dy1 > (canvas.height / 100) * 55 || y1 + dy1 < -150) {
       dy1 = -dy1;
     }
   }
-  if(redFish){
-    if(Math.sign(dx2)===1){
-      ctx.drawImage(red,0,0,fW,fH,x2,y2,fW/2,fH/2);
-    }else{
-      ctx.drawImage(redFlip,0,0,fW,fH,x2,y2,fW/2,fH/2);
+  if (redFish) {
+    if (Math.sign(dx2) === 1) {
+      ctx.drawImage(red, 0, 0, fW, fH, x2, y2, fW / 2, fH / 2);
+    } else {
+      ctx.drawImage(redFlip, 0, 0, fW, fH, x2, y2, fW / 2, fH / 2);
     }
     x2 += dx2;
     y2 += dy2;
-    if(x2 + dx2 > canvas.width-300 || x2 + dx2 < 0) {
+    if (x2 + dx2 > canvas.width - 300 || x2 + dx2 < 0) {
       dx2 = -dx2;
     }
-    if(y2 + dy2 > (canvas.height/100) *55 || y2 + dy2 < -150) {
+    if (y2 + dy2 > (canvas.height / 100) * 55 || y2 + dy2 < -150) {
       dy2 = -dy2;
     }
   }
-  if(yellowFish){
-    if(Math.sign(dx3)===1){
-      ctx.drawImage(yellow,0,0,fW,fH,x3,y3,fW/2,fH/2);
-    }else{
-      ctx.drawImage(yellowFlip,0,0,fW,fH,x3,y3,fW/2,fH/2);
+  if (yellowFish) {
+    if (Math.sign(dx3) === 1) {
+      ctx.drawImage(yellow, 0, 0, fW, fH, x3, y3, fW / 2, fH / 2);
+    } else {
+      ctx.drawImage(yellowFlip, 0, 0, fW, fH, x3, y3, fW / 2, fH / 2);
     }
     x3 += dx3;
     y3 += dy3;
-    if(x3 + dx3 > canvas.width-300 || x3 + dx3 < 0) {
+    if (x3 + dx3 > canvas.width - 300 || x3 + dx3 < 0) {
       dx3 = -dx3;
     }
-    if(y3 + dy3 > (canvas.height/100) *55 || y3 + dy3 < -150) {
+    if (y3 + dy3 > (canvas.height / 100) * 55 || y3 + dy3 < -150) {
       dy3 = -dy3;
     }
   }
-  if(purpleFish){
-    if(Math.sign(dx4)===1){
-      ctx.drawImage(purple,0,0,fW,fH,x4,y4,fW/2,fH/2);
-    }else{
-      ctx.drawImage(purpleFlip,0,0,fW,fH,x4,y4,fW/2,fH/2);
+  if (purpleFish) {
+    if (Math.sign(dx4) === 1) {
+      ctx.drawImage(purple, 0, 0, fW, fH, x4, y4, fW / 2, fH / 2);
+    } else {
+      ctx.drawImage(purpleFlip, 0, 0, fW, fH, x4, y4, fW / 2, fH / 2);
     }
     x4 += dx4;
     y4 += dy4;
-    if(x4 + dx4 > canvas.width-300 || x4 + dx4 < 0) {
+    if (x4 + dx4 > canvas.width - 300 || x4 + dx4 < 0) {
       dx4 = -dx4;
     }
-    if(y4 + dy4 > (canvas.height/100) *55 || y4 + dy4 < -150) {
+    if (y4 + dy4 > (canvas.height / 100) * 55 || y4 + dy4 < -150) {
       dy4 = -dy4;
     }
   }
   count++;
-  if(count>5000){
+  if (count > 5000) {
     count = 0;
-    if(maybe()>0){
+    if (maybe() > 0) {
       dx = Math.random();
       dy = -(Math.random()) / 2;
       dx1 = Math.random();
@@ -145,7 +142,7 @@ function makeFish(redFish, blueFish, spotFish, yellowFish, purpleFish){
       dy3 = -(Math.random()) / 2;
       dx4 = Math.random();
       dy4 = -(Math.random()) / 2;
-    } else{
+    } else {
       dx = -(Math.random());
       dy = Math.random() / 2;
       dx1 = -(Math.random());
@@ -158,24 +155,27 @@ function makeFish(redFish, blueFish, spotFish, yellowFish, purpleFish){
       dy4 = Math.random() / 2;
     }
   }
-  requestAnimationFrame(makeFish(redFish, blueFish, spotFish, yellowFish, purpleFish));
+  requestAnimationFrame(draw);
+}
+
+function draw() {
+  makeFish(choices[0][0], choices[0][1], choices[0][2], choices[0][3], choices[0][4]);
 }
 
 
 
 
-canvas.addEventListener('click', function(){
-  console.log(event);
+canvas.addEventListener('click', function () {
   ctx.beginPath();
-  ctx.rect(event.clientX,event.clientY,10,10);
+  ctx.rect(event.clientX, event.clientY, 10, 10);
   ctx.fillStyle = '#000000';
   ctx.fill();
   ctx.closePath();
 });
 
 
-var addFish = document.getElementById('add-fish');
-addFish.addEventListener('submit', function(){
+
+addFish.addEventListener('submit', function () {
   choices = [];
   event.preventDefault();
   var blueFish = event.target[0].checked;
@@ -184,43 +184,35 @@ addFish.addEventListener('submit', function(){
   var yellowFish = event.target[3].checked;
   var purpleFish = event.target[4].checked;
   choices.push([blueFish, spottedFish, redFish, yellowFish, purpleFish]);
-
+  var stringFish = JSON.stringify(choices);
+  localStorage.setItem('userFish', stringFish);
+  window.requestAnimationFrame(draw);
+  closeModal();
 });
 
-var modal = document.getElementById('modal');
 
-var span = document.getElementById('close');
-span.addEventListener('click', closeModal );
-var rock2 = document.getElementById('rock2');
+span.addEventListener('click', closeModal);
 rock2.addEventListener('click', openModal);
 
-function closeModal(){
-  // display to none
-  modal.style.display = 'none';
-  blurContent.removeAttribute('class', 'blur');
-  fishSwitch = true;
-  window.requestAnimationFrame(makeFish(choices[0][0], choices[0][1], choices[0][2], choices[0][3], choices[0][4]),1000);
-}
-function openModal(){
+function openModal() {
   modal.style.display = 'block';
   blurContent.setAttribute('class', 'blur');
 }
-var blurContent = document.getElementById ('blur');
-
-span.onclick = function() {
+function closeModal() {
   modal.style.display = 'none';
-};
-
-
-if(!localStorage.getItem('userFish')){
-  window.requestAnimationFrame(makeFish(choices[0][0], choices[0][1], choices[0][2], choices[0][3], choices[0][4]),1000);
-  openModal();
+  blurContent.removeAttribute('class', 'blur');
 }
 
+
+if (!localStorage.getItem('userFish')) {
+  openModal();
+} else {
+  var frozenFish = localStorage.getItem('userFish');
+  frozenFish = JSON.parse(frozenFish);
+  choices = frozenFish;
+  window.requestAnimationFrame(draw);
+}
 
 
 
 /////////////////////////////////HELPER//////////////////////////////////////
-
-
-

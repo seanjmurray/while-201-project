@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,96 +8,104 @@
   <link rel="stylesheet" href="css/reset.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
-<body id = "timeProfile">
+
+<body id="timeProfile">
   <header>
   </header>
-  
+
   <div id="modal">
-    
-    <div class= "modal-content">
+
+    <div class="modal-content">
       <div id="close">&times;</div>
       <form id="add-fish">
-        <p>Add a fish!</p>
+        <h2>Pick your fish!</h2>
         <!-- text field of some kind -->
         <!-- five inputs -->
         <label>
           <input type="checkbox" id="Blue-Fish">
-        <img class="modalPic" src="img/blueFish.png" alt="fish"></label><br>
+          <img class="modalPic" src="img/blueFish.png" alt="fish"></label><br>
         <label>
-        <input type="checkbox" id="Spotted-Fish">
-        <img class="modalPic" src="img/spottedFish.png" alt="fish"></label><br>
+          <input type="checkbox" id="Spotted-Fish">
+          <img class="modalPic" src="img/spottedFish.png" alt="fish"></label><br>
         <label>
-        <input type="checkbox" id="Red-Fish">
-        <img class="modalPic" src="img/redFish.png" alt="fish"></label><br>
+          <input type="checkbox" id="Red-Fish">
+          <img class="modalPic" src="img/redFish.png" alt="fish"></label><br>
         <label>
-        <input type="checkbox" id="Yellow-Fish">
-        <img class="modalPic" src="img/yellowFish.png" alt="fish"></label><br>
+          <input type="checkbox" id="Yellow-Fish">
+          <img class="modalPic" src="img/yellowFish.png" alt="fish"></label><br>
         <label>
           <input type="checkbox" id="Purple-Fish">
-        <img class="modalPic" src="img/purpleFish.png" alt="fish"></label><br>
+          <img class="modalPic" src="img/purpleFish.png" alt="fish"></label><br>
         <!-- submit -->
         <button type="submit">Submit</button>
       </form>
     </div>
   </div>
-<div id="blur">
-  <main>
-    <canvas id="myCanvas"></canvas>
-    <div id="buttons">
-      <audio id="soundtrack" src="nocturne.mp3"></audio>
-      <audio id="bubbleSounds" src="underwater.mp3"></audio>
-      <button id="audio" type="button">Music</button>
-      <button id="bubbles" type="button">Bubbles</button>
-    </div>
-    
-    <div id="background-wrap">  
-      <div class="bubble x1"></div>
-      <div class="bubble x2"></div>
-      <div class="bubble x3"></div>
-      <div class="bubble x4"></div>
-      <div class="bubble x5"></div>
-      <div class="bubble x6"></div>
-      <div class="bubble x7"></div>
-      <div class="bubble x8"></div>
-      <div class="bubble x9"></div>
-      <div class="bubble x10"></div>
-    </div>
-    <div class="hidden">
-      <img id="blue" src="img/blueFish.png" alt="fish">
-      <img id="blueFlip" src="img/blueFishFlipped.png" alt="flipFish">
-      <img id="spotted" src="img/spottedFish.png" alt="fish">
-      <img id="spottedFlip" src="img/spottedFishFlipped.png" alt="flipFish">
-      <img id="red" src="img/redFish.png" alt="fish">
-      <img id="redFlip" src="img/redFishFlipped.png" alt="flipFish">
-      <img id="yellow" src="img/yellowFish.png" alt="fish">
-      <img id="yellowFlip" src="img/yellowFishFlipped.png" alt="flipFish">
-      <img id="purple" src="img/purpleFish.png" alt="fish">
-      <img id="purpleFlip" src="img/purpleFishFlipped.png" alt="flipFish">
-    </div>
-  </main>
-  <footer>
-    <div>
-      <a href="index.html"><p>HOME</p><img id ="shell"src="img/shell-4345809_640.png" alt="shell"> </a>
-    </div>
+  <div id="blur">
+    <main>
+      <canvas id="myCanvas"></canvas>
+      <div id="buttons">
+        <audio id="soundtrack" src="nocturne.mp3"></audio>
+        <audio id="bubbleSounds" src="underwater.mp3"></audio>
+        <button id="audio" type="button">Music</button>
+        <button id="bubbles" type="button">Bubbles</button>
+      </div>
 
-    <div>
-      <a href="about.html"><p>ABOUT US</p><img id="starfish" src="img/starfish.png" alt="starfish" text="About Us"> </a>
-    </div>
+      <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>
+      </div>
+      <div class="hidden">
+        <img id="blue" src="img/blueFish.png" alt="fish">
+        <img id="blueFlip" src="img/blueFishFlipped.png" alt="flipFish">
+        <img id="spotted" src="img/spottedFish.png" alt="fish">
+        <img id="spottedFlip" src="img/spottedFishFlipped.png" alt="flipFish">
+        <img id="red" src="img/redFish.png" alt="fish">
+        <img id="redFlip" src="img/redFishFlipped.png" alt="flipFish">
+        <img id="yellow" src="img/yellowFish.png" alt="fish">
+        <img id="yellowFlip" src="img/yellowFishFlipped.png" alt="flipFish">
+        <img id="purple" src="img/purpleFish.png" alt="fish">
+        <img id="purpleFlip" src="img/purpleFishFlipped.png" alt="flipFish">
+      </div>
+    </main>
+    <footer>
+      <div>
+        <a href="index.html">
+          <p>HOME</p><img id="shell" src="img/shell-4345809_640.png" alt="shell">
+        </a>
+      </div>
 
-    <div>
-      <a href="links.html"><p>LINKS</p><img id="rock" src="img/rock.png" alt="rock"> </a> 
-    </div>
-    
-    <div>
-      <a><p>ADD FISH</p>
-        <img id="rock2" src="img/rock2.png" alt="rock2"> </a>
-    </div>
-  </footer>
-</div>
+      <div>
+        <a href="about.html">
+          <p>ABOUT US</p><img id="starfish" src="img/starfish.png" alt="starfish" text="About Us">
+        </a>
+      </div>
+
+      <div>
+        <a href="links.html">
+          <p>LINKS</p><img id="rock" src="img/rock.png" alt="rock">
+        </a>
+      </div>
+
+      <div>
+        <a>
+          <p>ADD FISH</p>
+          <img id="rock2" src="img/rock2.png" alt="rock2">
+        </a>
+      </div>
+    </footer>
+  </div>
   <script src="js/app.js"></script>
   <script src="js/music.js"></script>
-  <script src = "js/profile.js"></script>
-  <script src="js/modal.js"></script>
+  <script src="js/profile.js"></script>
 </body>
 
 </html>
