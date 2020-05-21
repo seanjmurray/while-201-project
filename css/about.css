@@ -44,10 +44,11 @@
 	transform: scale(1.1);
 	width: 200px;
 	height: 200px;
+	color: #222222;
 }
 
 .bio {
   transform: translateY(-4em);
 }
-	
+
 

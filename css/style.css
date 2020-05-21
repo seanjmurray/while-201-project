@@ -61,7 +61,7 @@ body {
 	animation: MoveUpDown 12s linear infinite;
 	left: 8%;
 	position: absolute;
-	top: 72%;
+	top: 73%;
 }
 
 @keyframes MoveUpDown {
@@ -262,6 +262,10 @@ footer div:hover {
 #rock2 {
 	width: 120px;
 	transition: .4s;
+}
+
+.crab {
+	width: 100px;
 }
 
 /* The Modal (background) */
