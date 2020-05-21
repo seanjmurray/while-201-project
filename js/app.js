@@ -47,6 +47,7 @@ var dx3 = -(Math.random());
 var dy3 = Math.random();
 var dx4 = Math.random();
 var dy4 = Math.random();
+var myReq;
 ////////////////////////////////// maybe function returns 1 or 0///////////
 var maybe = () => Math.floor(Math.random() * 2);
 
@@ -155,7 +156,7 @@ function makeFish(redFish, blueFish, spotFish, yellowFish, purpleFish) {
       dy4 = Math.random() / 2;
     }
   }
-  requestAnimationFrame(draw);
+  myReq = requestAnimationFrame(draw);
 }
 
 function draw() {
@@ -186,6 +187,7 @@ addFish.addEventListener('submit', function () {
   choices.push([redFish, blueFish, spottedFish, yellowFish, purpleFish]);
   var stringFish = JSON.stringify(choices);
   localStorage.setItem('userFish', stringFish);
+  window.cancelAnimationFrame(myReq);
   window.requestAnimationFrame(draw);
   closeModal();
 });
