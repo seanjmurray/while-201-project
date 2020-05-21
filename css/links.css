@@ -1,0 +1,84 @@
+.link {
+  background: radial-gradient(circle at 30px 30px, #4792e2, rgb(237, 232, 232));
+	border-radius: 50%;
+	font-weight: bold;
+	opacity: 50%;
+	outline: none;
+	padding: 100px;
+	width: 40px;
+	height: 40px;
+  transition: 1s ease;
+  /* position: relative; */
+  animation: MoveUpDown 15s linear infinite;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.link:hover, .link a:hover {
+  font-size: 14px;
+  transform: scale(1.1);
+  color: #222222;
+}
+
+a {
+  color: white;
+}
+
+#links a {
+  display: inline-block;
+}
+
+#links {
+  height: 100vh;
+}
+
+#zenhabits {
+  position: absolute;
+  /* top: 10%; */
+  left: 10%;
+}
+
+#zenhabitsdiv {
+  margin-left: -28px;
+}
+
+#beginners {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+}
+
+#beginnersdiv {
+  margin-left: -32px;
+}
+
+#yoga {
+  position: absolute;
+  top: 20%;
+  right: 39%;
+}
+
+#yogadiv {
+  margin-left: -55px;
+}
+
+#destress {
+  position: absolute;
+  /* top: 10%; */
+  right: 15%;
+}
+
+#destressdiv {
+  margin-left: -22px;
+}
+
+#train {
+  position: absolute;
+  top: 40%;
+  right: 10%;
+}
+
+#traindiv {
+  margin-left: -40px;
+}
